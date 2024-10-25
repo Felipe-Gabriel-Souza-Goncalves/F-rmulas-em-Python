@@ -1,5 +1,6 @@
 import math
 
+
 def bhaskara():
     
     while(True):
@@ -52,10 +53,24 @@ def numeroTriangular():
     # escolha do usuario pro limite da sequencia
     match escolhaSeq:
         case "1": 
-            valorSeq = int(input("até qual posição você deseja (números apenas)"))
+            while(True):
+                try:
+                    valorSeq = input("até qual posição você deseja (números apenas)")
+                    valorSeq = int(valorSeq)
+                    break
+                except (TypeError, ValueError):
+                    print("Digite somente números")
         case "2": 
-            valorSeq = int(input("até qual valor voce quer que atinja? (numeros apenas)"))
+            while(True):
+                try:
+                    valorSeq = input("até qual valor voce quer que atinja? (numeros apenas)")
+                    valorSeq = int(valorSeq)
+                    break
+                except (TypeError, ValueError):
+                    print("Digite somente números")
+                    
         case "/sair": escolhaFuncao()
+            
 
     # caso 1 de sequencia (até posição)
     if(escolhaSeq =="1"):
@@ -71,7 +86,13 @@ def numeroTriangular():
             if(n>valorSeq): break
 
 def trianguloDeBolas():
-    bolinhas = int(input("digite um numero inteiro"))
+    while(True):
+        try:
+            bolinhas = input("digite um numero inteiro \n")
+            bolinhas = int(bolinhas)
+            break
+        except (TypeError,ValueError):
+            print("input inválido")
 
     # Loop para cada nível conforme solicitado pelo usuario
     for i in range(1,bolinhas+1):
@@ -95,13 +116,16 @@ def primos():
         try: 
             numeroEscolhido = input("Digite um numero inteiro \n") 
             numeroEscolhido = int(numeroEscolhido)
+            if(numeroEscolhido < 0):
+                raise ValueError
             # se der certo, saia do while ↓↓
             break
         # se não, mostre a mensagem e retorne ao inicio pelo while ↓↑
-        except TypeError or ValueError:
-                print("Digite somente números inteiros")
+        except (TypeError, ValueError):
+            print("Digite somente números inteiros")
 
-    
+
+
     for i in range(1,numeroEscolhido):
         if(numeroEscolhido%i==0 and i !=1 and i != numeroEscolhido):
             primo = False
@@ -110,7 +134,7 @@ def primos():
             index+=1
         i+=1
         if(i> numeroEscolhido/2):
-            print("atingiu metade")
+            # print("atingiu metade")
             break
 
     # se for primo ↓↓
@@ -187,8 +211,9 @@ def pitagoras():
     if(escolhaAnalise == "1"):
         cateto1 = float(input("Digite o valor do cateto 1 \n"))
         cateto2 = float(input("Digite o valor do cateto 2 \n"))
+        print(cateto1, cateto2)
         # se os catetos forem menores q 1
-        if(cateto1 or cateto2 <1):
+        if(cateto1 < 1 or cateto2 <1):
             raise ValueError("Somente numeros positivos maiores que 1")
         print("A hipotenusa é ", round((cateto1**2+cateto2**2)**(1/2),2))
 
@@ -202,7 +227,12 @@ def pitagoras():
         print("O outro cateto é", round((hipotenusa**2-cateto1**2)**(1/2),2))
 
 def trianguloPascal():
-    escolhaDoUsuario = int(input("quantas linhas vc quer? \n"))
+    while(True):
+        try:
+            escolhaDoUsuario = int(input("quantas linhas vc quer? \n"))
+            break
+        except (TypeError, ValueError):
+            print("Digite somente numeros")
     # pegar input do usuário e declarar variaveis 
     mapaTrianguloPascal = []
     linhaTriangulo = []
@@ -270,8 +300,6 @@ def escolhaFuncao():
         case 5: analiseCombinatoria()
         case 6: pitagoras()
         case 7: trianguloPascal()
-
-
 
 # rodar a programação infinitamente
 while(True):
