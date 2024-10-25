@@ -13,3 +13,7 @@ Funções:
   - analiseCombinatoria() (arranjo e combinação simples)
   - pitagoras()
   - trianguloPascal()
+
+Atualização 24_10_24:
+
+    -uso de Try/Except para obter somente números nos inputs  
