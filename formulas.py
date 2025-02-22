@@ -269,6 +269,26 @@ def trianguloPascal():
         print("\n")
 
 
+def primorial():
+    print("\nPrimorial é o fatorial de um número levando em conta somente os números primos")
+    num = int(input("Digite o número para pegar o primorial"))
+    resultado = 1
+
+    numPrimos = []
+    isPrimo = True
+    for i in range(2, num+1, 1):
+        isPrimo = True
+        for j in range(2, i, 1):
+            if i % j == 0:
+                isPrimo = False
+                break
+        if (isPrimo == True):
+            numPrimos.append(i)
+
+    for i in numPrimos:
+        resultado *= i
+
+    print(f"O primorial de {num} é {resultado} \n")
 
 # função de outras funções:
 def escolhaFuncao():
@@ -282,6 +302,7 @@ def escolhaFuncao():
     print("5 - analiseCombinatoria() (arranjo e combinação simples)")
     print("6 - pitagoras()")
     print("7 - trianguloPascal()")
+    print("8 - primorial()")
     
     while(True):
         try:
@@ -300,6 +321,7 @@ def escolhaFuncao():
         case 5: analiseCombinatoria()
         case 6: pitagoras()
         case 7: trianguloPascal()
+        case 8: primorial()
 
 # rodar a programação infinitamente
 while(True):
