@@ -1,13 +1,14 @@
-# Fórmulas-em-Python
+# Fórmulas em Python
 
-Link para Google Colab (leitor): https://colab.research.google.com/drive/1wafbFvmCm5IhZQK335BypCRGOA0uGmJL?usp=sharing
+## 🌐 Link do projeto (Google Colab)
+https://colab.research.google.com/drive/1wafbFvmCm5IhZQK335BypCRGOA0uGmJL?usp=sharing
 
-Primeiro projeto feito em Python (sujeito a mudanças)
-Informações:1
-  -funções que quando executadas utilizam alguma fórmula matemática
-  -escreva no terminal as informações solicitadas
+## ✏️ Descrição
+Primeiro projeto feito em Python (sujeito a mudanças) <br>
+  - funções que quando executadas utilizam alguma fórmula matemática
+  - escreva no terminal as informações solicitadas
 
-Funções:
+## ⚙️ Funcionalidades
   - bhaskara() 
   - numeroTriangular()
   - trianguloDeBolas()
@@ -15,7 +16,7 @@ Funções:
   - analiseCombinatoria() (arranjo e combinação simples)
   - pitagoras()
   - trianguloPascal()
+  - primorial()
 
-Atualização 24_10_24:
-
-    -uso de Try/Except para obter somente números nos inputs  
+## 📁 Outros arquivos
+[Atualizações do projeto](CHANGELOG.md)
